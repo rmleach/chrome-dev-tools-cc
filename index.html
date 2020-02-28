@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Devtool Sandbox</title>
+  </head>
+
+  <body>
+    <h1>DevTools Playground</h1>
+    <button>Press</button>
+    <script>
+      // console.log("Hello");
+      // // console.log(myvar);
+      // console.error('This is an error');
+      // console.warn('This is a warning')
+      // // console.dir(document);
+      // console.log(document.URL);
+      // console.table([{name: 'Ryan', email: "test@test.com", age: 33}]);
+      // console.group('Say Hello');
+      //   console.log('Hello John');
+      //   console.log('Hello Sally');
+      //   console.log('Hello Chris');
+      // console.groupEnd('Say Hello');
+
+      // console.time("For Loop");
+      // for (var i = 0; i < 2000; i++) {
+      //   console.log(i);
+      // }
+      // console.timeEnd("For Loop");
+
+      // function greaterThan(x, y) {
+      //   console.assert(x > y, {
+      //     message: "x is not greater than y",
+      //     x: x,
+      //     y: y
+      //   });
+      // }
+
+      // greaterThan(4, 5);
+      // greaterThan(6, 5);
+
+      document
+        .querySelector("button")
+        .addEventListener("onclick", getUsers);
+
+      function getUsers() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://api.github.com/users", true);
+        xhr.onload = function() {
+          if (this.status === 200) {
+            console.log("Users returned");
+          }
+        };
+        xhr.send();
+      }
+    </script>
+  </body>
+</html>
